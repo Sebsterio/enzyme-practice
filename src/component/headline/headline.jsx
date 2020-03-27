@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class Headline extends React.Component {
 	state = {};
@@ -13,5 +14,10 @@ class Headline extends React.Component {
 		);
 	}
 }
+
+Headline.propTypes = {
+	header: PropTypes.string,
+	desc: PropTypes.string
+};
 
 export default Headline;
