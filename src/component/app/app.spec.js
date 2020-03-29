@@ -30,4 +30,10 @@ describe("App Component", () => {
 		const component = findByTestAttr(wrapper, "App");
 		expect(component.length).toBe(1);
 	});
+
+	test("hideButton method updates state", () => {
+		const classInstance = wrapper.instance();
+		classInstance.hideButton();
+		expect(classInstance.state.btnHidden).toBe(true);
+	});
 });

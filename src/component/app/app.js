@@ -14,10 +14,19 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.fetch = this.fetch.bind(this);
+		this.state = {
+			btnHidden: false
+		};
 	}
 	fetch() {
 		this.props.fetchPosts();
+		this.hideButton();
 	}
+
+	hideButton() {
+		this.setState({ btnHidden: true });
+	}
+
 	render() {
 		const { posts } = this.props;
 		const configButton = {
@@ -29,7 +38,7 @@ class App extends Component {
 				<Header></Header>
 				<main>
 					<Headline header="Posts" desc="Click to display posts" />
-					<SharedButton {...configButton} />
+					{!this.state.btnHidden && <SharedButton {...configButton} />}
 					{!!posts && (
 						<div className="posts">
 							{posts.map((post, index) => (
