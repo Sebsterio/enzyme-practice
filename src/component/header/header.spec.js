@@ -12,7 +12,7 @@ describe("Header component", () => {
 	});
 
 	it("renders without errors", () => {
-		const wrapper = findByTestAttr(component, "headerComponent");
+		const wrapper = findByTestAttr(component, "Header");
 		expect(wrapper.length).toBe(1);
 	});
 
